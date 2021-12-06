@@ -11,7 +11,7 @@
 
 // Instructions: The current code uses JSX to assign a div element to the constant JSX. Replace the div with an h1 element and add the text Hello JSX! inside it.
 
-const JSX = <div></div>;
+const JSX = <h1>Hello JSX!</h1>;
 
 // 2 React: Create a Complex JSX Element
 // The last challenge was a simple example of JSX, but JSX can represent more complex HTML as well.
@@ -42,6 +42,16 @@ const JSX = <div></div>;
 
 // Note: When rendering multiple elements like this, you can wrap them all in parentheses, but it's not strictly required. Also notice this challenge uses a div tag to wrap all the child elements within a single parent element. If you remove the div, the JSX will no longer transpile. Keep this in mind, since it will also apply when you return JSX elements in React components.
 
+const JSX = (
+  <div>
+    <h1>Hello</h1>
+    <p>It's Tuesday!</p>
+  </div>
+);
+
+
+
+
 // 3.React: Add Comments in JSX
 // JSX is a syntax that gets compiled into valid JavaScript. Sometimes, for readability, you might need to add comments to your code. Like most programming languages, JSX has its own way to do this.
 
@@ -49,11 +59,11 @@ const JSX = <div></div>;
 
 // The code editor has a JSX element similar to what you created in the last challenge. Add a comment somewhere within the provided div element, without modifying the existing h1 or p elements.
 const JSX = (
-    <div>
-      <h1>This is a block of JSX</h1>
-      <p>Here's a subtitle</p>
-    </div>
-  );
+  <div>
+    <h1>This is a block of JSX</h1>
+    <p>Here's a subtitle</p>
+  </div>
+);
 
 
 
@@ -69,15 +79,15 @@ const JSX = (
 // The code editor has a simple JSX component. Use the ReactDOM.render() method to render this component to the page. You can pass defined JSX elements directly in as the first argument and use document.getElementById() to select the DOM node to render them to. There is a div with id='challenge-node' available for you to use. Make sure you don't change the JSX constant.
 
 const JSX = (
-    <div>
-      <h1>Hello World</h1>
-      <p>Lets render this to the DOM</p>
-    </div>
-  );
-  // Change code below this line
+  <div>
+    <h1>Hello World</h1>
+    <p>Lets render this to the DOM</p>
+  </div>
+);
+// Change code below this line
+ReactDOM.render(<JSX />, document.getElementByID("challenge-node"));
 
-
-  // 5 Define an HTML Class in JSX
+// 5 Define an HTML Class in JSX
 // Now that you're getting comfortable writing JSX, you may be wondering how it differs from HTML.
 
 // So far, it may seem that HTML and JSX are exactly the same.
@@ -88,7 +98,7 @@ const JSX = (
 
 // Apply a class of myDiv to the div provided in the JSX code.
 const JSX = (
-  <div>
+  <div className="myDiv">
     <h1>Add a class to this div</h1>
   </div>
 );
@@ -110,13 +120,13 @@ const JSX = (
 
 // const JSX = (
 //   <div>
-//     <h2>Welcome to React!</h2> <br >
+//     <h2>Welcome to React!</h2> <br />
 //     <p>Be sure to close all tags!</p>
-//     <hr >
+//     <hr />
 //   </div>
 // );
 
- {/* 7 Create a Stateless Functional Component
+{/* 7 Create a Stateless Functional Component
 Components are the core of React. Everything in React is a component and here you will learn how to create one.
 
 There are two ways to create a React component. The first way is to use a JavaScript function. Defining a component in this way creates a stateless functional component. The concept of state in an application will be covered in later challenges. For now, think of a stateless component as one that can receive data and render it, but does not manage or track changes to that data. (We'll cover the second way to create a React component in the next challenge.)
@@ -136,8 +146,10 @@ The code editor has a function called MyComponent. Complete this function so it 
 
 Note: The text is considered a child of the div element, so you will not be able to use a self-closing tag. */}
 
-const MyComponent = function() {
- 
+const MyComponent = function () {
+  return (
+    <div>Hello JSX</div>
+  )
 }
 
 //8 Create a React Component
@@ -164,7 +176,9 @@ class MyComponent extends React.Component {
   }
   render() {
     // Change code below this line
-
+    return (
+      <h1>Hello REACT</h1>
+    )
 
 
     // Change code above this line
@@ -205,10 +219,10 @@ class ParentComponent extends React.Component {
     return (
       <div>
         <h1>I am the parent</h1>
-        { /* Change code below this line */ }
-      
+        { /* Change code below this line */}
+        <ChildComponent />
 
-        { /* Change code above this line */ }
+        { /* Change code above this line */}
       </div>
     );
   }
@@ -238,9 +252,9 @@ const TypesOfFruit = () => {
 const Fruits = () => {
   return (
     <div>
-      { /* Change code below this line */ }
+      { /* Change code below this line */}
 
-      { /* Change code above this line */ }
+      { /* Change code above this line */}
     </div>
   );
 };
@@ -254,9 +268,9 @@ class TypesOfFood extends React.Component {
     return (
       <div>
         <h1>Types of Food:</h1>
-        { /* Change code below this line */ }
+        { /* Change code below this line */}
 
-        { /* Change code above this line */ }
+        { /* Change code above this line */}
       </div>
     );
   }
@@ -276,9 +290,9 @@ class Fruits extends React.Component {
     return (
       <div>
         <h2>Fruits:</h2>
-        { /* Change code below this line */ }
+        { /* Change code below this line */}
 
-        { /* Change code above this line */ }
+        { /* Change code above this line */}
       </div>
     );
   }
@@ -286,15 +300,15 @@ class Fruits extends React.Component {
 
 class TypesOfFood extends React.Component {
   constructor(props) {
-     super(props);
+    super(props);
   }
   render() {
     return (
       <div>
         <h1>Types of Food:</h1>
-        { /* Change code below this line */ }
+        { /* Change code below this line */}
 
-        { /* Change code above this line */ }
+        { /* Change code above this line */}
         <Vegetables />
       </div>
     );
@@ -352,9 +366,9 @@ class TypesOfFood extends React.Component {
 const CurrentDate = (props) => {
   return (
     <div>
-      { /* Change code below this line */ }
+      { /* Change code below this line */}
       <p>The current date is: </p>
-      { /* Change code above this line */ }
+      { /* Change code above this line */}
     </div>
   );
 };
@@ -367,9 +381,9 @@ class Calendar extends React.Component {
     return (
       <div>
         <h3>What date is it?</h3>
-        { /* Change code below this line */ }
+        { /* Change code below this line */}
         <CurrentDate />
-        { /* Change code above this line */ }
+        { /* Change code above this line */}
       </div>
     );
   }
@@ -387,7 +401,7 @@ class Calendar extends React.Component {
 
 const List = (props) => {
   { /* Change code below this line */ }
-  return <p>{}</p>
+  return <p>{ }</p>
   { /* Change code above this line */ }
 };
 
@@ -400,11 +414,11 @@ class ToDo extends React.Component {
       <div>
         <h1>To Do Lists</h1>
         <h2>Today</h2>
-        { /* Change code below this line */ }
-        <List/>
+        { /* Change code below this line */}
+        <List />
         <h2>Tomorrow</h2>
-        <List/>
-        { /* Change code above this line */ }
+        <List />
+        { /* Change code above this line */}
       </div>
     );
   }
@@ -444,7 +458,7 @@ class ShoppingCart extends React.Component {
   }
   render() {
     { /* Change code below this line */ }
-    return <Items />
+    return <Items quantity = {10}/>
     { /* Change code above this line */ }
   }
 };
@@ -466,7 +480,9 @@ const Items = (props) => {
 };
 
 // Change code below this line
-
+Items.propTypes = {
+  quantity: PropTypes.number.isRequired
+}
 // Change code above this line
 
 Items.defaultProps = {
@@ -495,11 +511,15 @@ class ReturnTempPassword extends React.Component {
   }
   render() {
     return (
-        <div>
-            { /* Change code below this line */ }
-            <p>Your temporary password is: <strong></strong></p>
-            { /* Change code above this line */ }
-        </div>
+      <div>
+        { /* Change code below this line */}
+        <p>Hello {this.props.name}</p>
+        <p>
+        Your temporary password is: 
+        <strong> {this.props.tempPassword}</strong>
+        </p>
+        { /* Change code above this line */}
+      </div>
     );
   }
 };
@@ -511,14 +531,15 @@ class ResetPassword extends React.Component {
   }
   render() {
     return (
-        <div>
-          <h2>Reset Password</h2>
-          <h3>We've generated a new temporary password for you.</h3>
-          <h3>Please reset this password from your account settings ASAP.</h3>
-          { /* Change code below this line */ }
-
-          { /* Change code above this line */ }
-        </div>
+      <div>
+        <h2>Reset Password</h2>
+        <h3>We've generated a new temporary password for you.</h3>
+        <h3>Please reset this password from your account settings ASAP.</h3>
+        { /* Change code below this line */}
+      <ReturnTempPassword tempPassword=
+      {"helloUsefulProgrammer"}/>
+        { /* Change code above this line */}
+      </div>
     );
   }
 };
@@ -538,9 +559,26 @@ class CampSite extends React.Component {
   render() {
     return (
       <div>
-        <Camper/>
+        <Camper />
       </div>
     );
   }
 };
 // Change code below this line
+class Camper extends React.Component {
+  render() {
+    return(
+      <div>
+      <p>{this.props.name}</p>
+      </div>
+    )
+  }
+}
+
+Camper.defaultProps = {
+  name: "CamperBot"
+}
+
+Camper.propTypes = {
+  name: PropTypes.string.isRequired
+}
